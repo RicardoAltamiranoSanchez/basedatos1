@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de personas</title>
+</head>
+<body >
+<h1>Listado de personas</h1>
+<div>Total de personas {{total_personas}}</div>
+<div><a href="{{url_for('agregar')}}">Agregar nueva persona</a>  </div>
+<div>
+    <table border="1">
+        <thead>
+        <tr><!--cabeceros-->
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th><!--renglon de cabeceros-->
+            <th>Email</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr><!--cabeceros-->
+        </thead>
+        <tbody>
+         {%for persona in personas%}<!--para iterar-->
+        <tr><!--renglon-->
+
+           <td><!--celdas-->{{persona.id}} </td><!--celdas-->
+           <td><!--celdas-->{{persona.nombre}} </td><!--celdas-->
+           <td><!--celdas-->{{persona.apellido}} </td><!--celdas-->
+           <td><!--celdas-->{{persona.email}} </td><!--celdas-->
+            <td> <a href="ver_persona/{{persona.id}}">ver</a>  </td>
+            <td> <a href="editar/{{persona.id}}">Editar</a>  </td>
+            <td> <a href="eliminar/{{persona.id}}">Eliminar</a>  </td>
+
+        </tr><!--renglon-->
+          {%endfor%}
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>

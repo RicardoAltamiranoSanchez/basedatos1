@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar persona</title>
+</head>
+<body>
+<hi> Agregando persona</hi>
+<form method="post"><!--para crear el formulario  post es para procesar los datos-->
+    {{forma.csrf_token}}<!--indicamos el token es importante agregar si no se puede usar el formlario-->
+    <p><!--parrafo-->
+        {{forma.nombre.label}}<br><!--es para espacios label etiqueta- br es un salto de linea-->
+        {{forma.nombre(size=30)}}<!-- de esta forma se procesan los datos accedemos alos valores-->
+    </p>
+    <p>
+        {{forma.apellido.label}}<br>
+        {{forma.apellido(size=30)}}
+    </p>
+    <p>
+        {{forma.email.label}}<br>
+        {{forma.email(size=30)}}
+    </p>
+    <p>
+        {{forma.enviar()}}<!--incluimos el componente-->>
+
+    </p>
+</form>
+</body>
+</html>
